@@ -15,7 +15,7 @@ import {
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "../Calendar.css";
 import Diary from "./Diary";
-import constants from "@src/utils/constants";
+import constants from "../utils/constants";
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date()); // 현재 달 (2024-01)
