@@ -14,14 +14,18 @@ import {
 
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "../Calendar.css";
+import Diary from "./Diary";
+import constants from "@src/utils/constants";
 
 const Calendar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date()); // 현재 달 (2024-01)
+  const [currentDate, setCurrentDate] = useState<Date>(new Date()); // 현재 달 (2024-01)
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const monthStart = startOfMonth(currentDate);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);
-  const week = ["일", "월", "화", "수", "목", "금", "토"];
+  const week = constants.WEEK;
 
   const weeks = week.map((item, index) => {
     return (
@@ -77,34 +81,35 @@ const Calendar = () => {
     setCurrentDate(addMonths(currentDate, 1));
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
   const handleInfo = (): void => {
-    console.log("1");
+    setIsOpen(!isOpen);
   };
 
   return (
-    <section className="layout">
-      <header className="header">
-        <button onClick={prevMonth} className="button">
-          <AiOutlineLeft size={24} color="#000" />
-        </button>
-        <h2>
-          {format(currentDate, "yyyy")}년 {format(currentDate, "M")}월
-        </h2>
-        <button onClick={nextMonth}>
-          <AiOutlineRight size={24} color="#000" />
-        </button>
-      </header>
-      <div className="calendar-box">
+    <>
+      <section className="layout">
+        <header className="header">
+          <button onClick={prevMonth} className="button">
+            <AiOutlineLeft size={24} color="#000" />
+          </button>
+          <h2>
+            {format(currentDate, "yyyy")}년 {format(currentDate, "M")}월
+          </h2>
+          <button onClick={nextMonth}>
+            <AiOutlineRight size={24} color="#000" />
+          </button>
+        </header>
         <div className="calendar-box">
-          <div className="week-layout">{weeks}</div>
-          <div className="day-layout" onClick={handleInfo}>
-            {day}
+          <div className="calendar-box">
+            <div className="week-layout">{weeks}</div>
+            <div className="day-layout" onClick={handleInfo}>
+              {day}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {isOpen && <Diary />}
+    </>
   );
 };
 
