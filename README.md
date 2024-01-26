@@ -6,7 +6,5 @@
 
 ```
 pnpm run dev
-port: http://localhost:5174/
-
-
+port: http://localhost:5173/
 ```
