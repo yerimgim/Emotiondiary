@@ -66,3 +66,7 @@ button {
   position: relative;
   font-weight: 700;
 }
+
+.diary-button-box {
+  display: flex;
+}
