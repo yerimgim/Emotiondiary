@@ -14,7 +14,7 @@ import {
 
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "../Calendar.css";
-import Diary from "./Diary";
+import DiaryDialog from "./DiaryDialog";
 import constants from "../utils/constants";
 
 const Calendar = () => {
@@ -108,7 +108,7 @@ const Calendar = () => {
           </div>
         </div>
       </section>
-      {isOpen && <Diary />}
+      {isOpen && <DiaryDialog />}
     </>
   );
 };
