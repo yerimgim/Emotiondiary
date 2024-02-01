@@ -16,6 +16,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "../Calendar.css";
 import DiaryDialog from "./DiaryDialog";
 import constants from "../utils/constants";
+import Dialog from "./Dialog";
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date()); // 현재 달 (2024-01)
@@ -85,6 +86,11 @@ const Calendar = () => {
     setIsOpen(!isOpen);
   };
 
+  const toggleModal = () => setIsOpen(!isOpen);
+  const handleSave = () => {
+    console.log(1);
+  };
+
   return (
     <>
       <section className="layout">
@@ -108,7 +114,11 @@ const Calendar = () => {
           </div>
         </div>
       </section>
-      {isOpen && <DiaryDialog />}
+      {isOpen && (
+        <Dialog isOpen={isOpen} onClose={toggleModal} onSave={handleSave}>
+          <DiaryDialog />
+        </Dialog>
+      )}
     </>
   );
 };
