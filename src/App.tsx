@@ -3,7 +3,7 @@ import "./App.css";
 import Calendar from "./components/Calendar";
 import Login from "./components/Login";
 
-import { RequireToken } from "./components/Auth";
+import { RequireToken } from "./utils/Auth";
 
 function App() {
   return (

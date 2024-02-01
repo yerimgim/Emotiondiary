@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getToken, setToken } from "./Auth";
+import { getToken, setToken } from "../utils/Auth";
 
 const Login = () => {
   const [inputId, setInputId] = useState("");
@@ -52,6 +52,9 @@ const Login = () => {
         />
       </div>
       <div>
+        <button type="button" onClick={() => console.log("Register")}>
+          Register
+        </button>
         <button type="button" onClick={onClickLogin}>
           Login
         </button>

@@ -8,13 +8,13 @@ export const getToken = (token: any) => {
   console.log(token);
   return localStorage.getItem("token");
 };
-export function RequireToken({ children }) {
-  // let auth = fetchToken();
-  let location = useLocation();
+// export function RequireToken({ children }) {
+//   // let auth = fetchToken();
+//   let location = useLocation();
 
-  if (!auth) {
-    return <Navigate to="/" state={{ from: location }} />;
-  }
+//   if (!auth) {
+//     return <Navigate to="/" state={{ from: location }} />;
+//   }
 
-  return children;
-}
+//   return children;
+// }
