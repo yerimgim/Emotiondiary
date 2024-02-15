@@ -71,4 +71,5 @@ button {
 
 .diary-button-box {
   display: flex;
+  justify-content: space-between;
 }
