@@ -1,3 +1,5 @@
+import ReactQuill from "react-quill";
+
 const Diary = () => {
   return (
     <div className="">
@@ -25,7 +27,8 @@ const Diary = () => {
       </div>
       <div className="">
         <label htmlFor="diary">일기</label>
-        <input type="text" placeholder="" id="diary" />
+        {/* <input type="text" placeholder="" id="diary" /> */}
+        <ReactQuill />
       </div>
     </div>
   );

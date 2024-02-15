@@ -5,7 +5,8 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
@@ -29,6 +30,7 @@ button {
 
 .week-layout {
   display: flex;
+  justify-content: space-between;
 }
 
 .week {
