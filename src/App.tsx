@@ -1,15 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Calendar from "./components/Calendar";
-import Login from "./components/Login";
-
-// import { RequireToken } from "./utils/Auth";
+import Home from "./components/Home";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/calendar" element={<Calendar />} />
       </Routes>
     </BrowserRouter>

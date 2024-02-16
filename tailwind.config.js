@@ -2,7 +2,11 @@
 export default {
   content: ["**/*.{js,ts,jsx,tsx}", "**/*/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        KOTRAHOPE: ["KOTRAHOPE"],
+      },
+    },
   },
   plugins: [],
 };
