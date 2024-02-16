@@ -32,8 +32,8 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      <div>
+      <h1 className="font-['KOTRAHOPE']">Login</h1>
+      <div className="border-b-4 border-indigo-500 mb-2 active:border-indigo-800">
         <label htmlFor="input_id">ID : </label>
         <input
           type="text"
@@ -42,7 +42,7 @@ const Login = () => {
           onChange={handleInputId}
         />
       </div>
-      <div>
+      <div className="border-b-4 border-indigo-500 mb-6">
         <label htmlFor="input_pw">PW : </label>
         <input
           type="password"
@@ -51,13 +51,9 @@ const Login = () => {
           onChange={handleInputPassword}
         />
       </div>
-      <div>
-        <button type="button" onClick={() => console.log("Register")}>
-          Register
-        </button>
-        <button type="button" onClick={onClickLogin}>
-          Login
-        </button>
+      <div className="flex flex-row justify-around">
+        <button onClick={() => console.log("Register")}>Register</button>
+        <button onClick={onClickLogin}>Login</button>
       </div>
     </div>
   );
